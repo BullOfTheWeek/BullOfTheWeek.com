@@ -7,11 +7,10 @@ var config = {
 	username: process.env.username,
 	password: process.env.password, // optional, prompted if none given
 	host: process.env.host,
-	port: 21,
-	localRoot: __dirname + "/static",
-	remoteRoot: "bulloftheweek.com/BullOfTheWeek/develop/",
-	include: ['static/*'],
-	exclude: ['.*', 'tmp/*', 'build/*','node_modules/*','node_modules',]
+	port: process.env.port,
+	localRoot: __dirname + process.env.localRoot,
+	remoteRoot: process.env.remoteDevRoot,
+	include: ['*.*']
 }
 	
 ftpDeploy.deploy(config, function(err) {
