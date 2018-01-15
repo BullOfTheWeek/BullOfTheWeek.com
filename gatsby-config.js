@@ -1,3 +1,4 @@
+require('dotenv/config');
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Starter Blog',
@@ -5,7 +6,7 @@ module.exports = {
     description: 'A starter blog demonstrating what Gatsby can do.',
     siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
   },
-  pathPrefix: '/develop',
+  pathPrefix: '/'+process.env.remoteDevRoot,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,

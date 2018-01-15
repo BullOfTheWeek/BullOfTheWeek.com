@@ -7,8 +7,8 @@ var config = {
 	password: process.env.password, // optional, prompted if none given
 	host: process.env.host,
 	port: process.env.port,
-	localRoot: __dirname + process.env.localRoot,
-	remoteRoot: process.env.remoteDepRoot,
+	localRoot: __dirname +'/'+process.env.localRoot,
+	remoteRoot:'/'+ process.env.remoteDepRoot+'/',
 	include: ['*.*']
 }
 	
