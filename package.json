@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-blog",
-  "description": "Starter Gatsby Blog",
-  "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "bull-of-the-week",
+  "description": "BullOfTheWeek.com Crypto Trading Website",
+  "version": "0.01",
+  "author": "milad asghari <miladasghari2016@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
   },
@@ -48,8 +48,8 @@
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
-    "deploy":"node deploy",
-    "dev-deploy":"node dev-deploy",
+    "deploy": "node deploy",
+    "dev-deploy": "node dev-deploy",
     "dev": "gatsby develop",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
