@@ -1,7 +1,7 @@
 {
   "name": "bull-of-the-week",
   "description": "BullOfTheWeek.com Crypto Trading Website",
-  "version": "0.01",
+  "version": "0.0.1",
   "author": "milad asghari <miladasghari2016@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
