@@ -28,7 +28,7 @@ class BlogIndex extends React.Component {
       <div>
         <Helmet title={siteTitle} />
         <Bio />
-        <a data-scroll href="#bazinga">Anchor Link</a>
+        <a data-scroll href="#bazinga">smooth me!</a>
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
