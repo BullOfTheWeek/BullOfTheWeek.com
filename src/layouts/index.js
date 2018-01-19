@@ -1,9 +1,13 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import { Container } from 'react-responsive-grid'
-
 import { rhythm, scale } from '../utils/typography'
-
+const ListLink = props =>
+<li style={{ display: `inline-block`, marginRight: `1rem`  }}>
+  <Link style={{textDecoration:'none'}} to={props.to}>
+    {props.children}
+  </Link>
+</li>
 class Template extends React.Component {
   render() {
     const { location, children } = this.props
@@ -16,24 +20,13 @@ class Template extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            Gatsby Starter Blog
-          </Link>
-        </h1>
+        <div>
+            <ul style={{ listStyle: `none`, textAlign: `center` }}>
+              <ListLink to="/">About</ListLink>
+              <ListLink to="/about/">Contact</ListLink>
+              <ListLink to="/contact/">Blog</ListLink>
+            </ul>
+        </div>
       )
     } else {
       header = (
@@ -64,7 +57,7 @@ class Template extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        {header}
+        
         {children()}
       </Container>
     )
