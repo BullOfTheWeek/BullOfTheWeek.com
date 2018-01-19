@@ -3,35 +3,28 @@ import React from 'react'
 // Import typefaces
 import 'typeface-montserrat'
 import 'typeface-merriweather'
-
-import profilePic from './profile-pic.jpg'
 import { rhythm } from '../utils/typography'
-
 class Bio extends React.Component {
   render() {
     return (
       <div
         style={{
-          display: 'flex',
           marginBottom: rhythm(2.5),
         }}
       >
-        <img
-          src={profilePic}
-          alt={`Kyle Mathews`}
-          style={{
-            marginRight: rhythm(1 / 2),
-            marginBottom: 0,
-            width: rhythm(2),
-            height: rhythm(2),
-          }}
-        />
+       <span>
+          Wellcome to Bull Of The Week
+       </span>
+       <br/>
+       <span>
+         The First Crypto Trading
+         <br/>
+         Mailing list 
+       </span>
         <p>
-          Written by <strong>Kyle Mathews</strong> who lives and works in San
-          Francisco building useful things.{' '}
-          <a href="https://twitter.com/kylemathews">
-            You should follow him on Twitter
-          </a>
+          join today to find great ICO reviews,undervalued 
+          crypto tokens and solid ways to make profit every
+          week in your email for FREE! 
         </p>
       </div>
     )

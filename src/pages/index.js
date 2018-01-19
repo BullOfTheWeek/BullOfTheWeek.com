@@ -3,11 +3,14 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Bio from '../components/Bio'
+import SignUp from '../components/SignUp'
+import About from '../components/About'
+import Contact from '../components/Contact'
+import Blog from '../components/Blog'
 import { rhythm } from '../utils/typography'
 import SmoothScroll from 'smooth-scroll/dist/js/smooth-scroll.js'
  
  var scroll = new SmoothScroll('a[href*="#"]', {
-
 	ignore: '[data-scroll-ignore]', // Selector for links to ignore (must be a valid CSS selector)
 	header: null, // Selector for fixed headers (must be a valid CSS selector)
 	speed: 800, // Integer. How fast to complete the scroll in milliseconds
@@ -19,6 +22,13 @@ import SmoothScroll from 'smooth-scroll/dist/js/smooth-scroll.js'
 	after: function () {} // Callback to run after scroll
 });
 
+const ListLink = props =>
+  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
+    <Link to={props.to}>
+      {props.children}
+    </Link>
+  </li>
+
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
@@ -27,8 +37,25 @@ class BlogIndex extends React.Component {
     return (
       <div>
         <Helmet title={siteTitle} />
+        <div>
+            <ul style={{ listStyle: `none`, textAlign: `center` }}>
+              <a style={{marginRight:'1rem'}} href="#about">About</a>
+              <a style={{marginRight:'1rem'}} href="#contact">Contact</a>
+              <a style={{marginRight:'1rem'}} href="#blog">Blog</a>
+            </ul>
+        </div>
         <Bio />
-        <a data-scroll href="#bazinga">smooth me!</a>
+        <SignUp />
+        <div id="about">
+          <About />
+        </div>
+        <div id="contact">
+          <Contact />
+        </div>
+        <div id="blog">
+          <Blog />
+        </div>
+         <a data-scroll href="#bazinga">smooth me!</a>
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
@@ -48,7 +75,6 @@ class BlogIndex extends React.Component {
           )
         })}
         <div id="bazinga">Bazinga!</div>
-
       </div>
     )
   }
