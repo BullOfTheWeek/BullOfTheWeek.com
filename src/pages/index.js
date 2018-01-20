@@ -9,7 +9,7 @@ import Contact from '../components/Contact'
 import Blog from '../components/Blog'
 import { rhythm } from '../utils/typography'
 import SmoothScroll from 'smooth-scroll/dist/js/smooth-scroll.js'
- 
+import styles from './index.module.css'
  var scroll = new SmoothScroll('a[href*="#"]', {
 	ignore: '[data-scroll-ignore]', // Selector for links to ignore (must be a valid CSS selector)
 	header: null, // Selector for fixed headers (must be a valid CSS selector)
@@ -22,12 +22,6 @@ import SmoothScroll from 'smooth-scroll/dist/js/smooth-scroll.js'
 	after: function () {} // Callback to run after scroll
 });
 
-const ListLink = props =>
-  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
-    <Link to={props.to}>
-      {props.children}
-    </Link>
-  </li>
 
 class BlogIndex extends React.Component {
   render() {
@@ -37,11 +31,11 @@ class BlogIndex extends React.Component {
     return (
       <div>
         <Helmet title={siteTitle} />
-        <div>
+        <div className={styles.menu}>
             <ul style={{ listStyle: `none`, textAlign: `center` }}>
-              <a style={{marginRight:'1rem'}} href="#about">About</a>
-              <a style={{marginRight:'1rem'}} href="#contact">Contact</a>
-              <a style={{marginRight:'1rem'}} href="#blog">Blog</a>
+              <a  href="#about">About</a>
+              <a  href="#contact">Contact</a>
+              <a  href="#blog">Blog</a>
             </ul>
         </div>
         <Bio />
@@ -53,28 +47,28 @@ class BlogIndex extends React.Component {
           <Contact />
         </div>
         <div id="blog">
-          <Blog />
-        </div>
-         <a data-scroll href="#bazinga">smooth me!</a>
-        {posts.map(({ node }) => {
-          const title = get(node, 'frontmatter.title') || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+            <h1 style={{fontFamily:"Shadows Into Light"}}> Blog </h1>
+            <div style={{marginLeft:'1.5em'}}>
+                {posts.map(({ node }) => {
+                  const title = get(node, 'frontmatter.title') || node.fields.slug
+                  return (
+                    <div key={node.fields.slug}>
+                      <h3
+                        style={{
+                          marginBottom: rhythm(1 / 4),
+                        }}
+                      >
+                        <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+                          {title}
+                        </Link>
+                      </h3>
+                      <small>{node.frontmatter.date}</small>
+                      <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                    </div>
+                  )
+                })}
             </div>
-          )
-        })}
-        <div id="bazinga">Bazinga!</div>
+        </div>
       </div>
     )
   }
