@@ -5,7 +5,7 @@ class SignUp extends React.Component {
     render() {
         return (
             <div style={{textAlign:'center'}}>
-                <p> join us ! </p>
+                <h2> join us ! </h2>
             </div>
         )
     }

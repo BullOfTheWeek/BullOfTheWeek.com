@@ -28,7 +28,9 @@
     "react-responsive-grid": "^0.3.4",
     "smooth-scroll": "^12.1.5",
     "typeface-merriweather": "0.0.43",
+    "typeface-modern-antiqua": "0.0.44",
     "typeface-montserrat": "0.0.43",
+    "typeface-shadows-into-light": "0.0.44",
     "typography-theme-wordpress-2016": "^0.15.10"
   },
   "devDependencies": {
