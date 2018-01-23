@@ -4,6 +4,9 @@ import React from 'react'
 import 'typeface-montserrat'
 import 'typeface-merriweather'
 import 'typeface-shadows-into-light'
+import 'typeface-josefin-sans'
+import styles from '../pages/index.module.css'
+
 import { rhythm } from '../utils/typography'
 class Bio extends React.Component {
   render() {
@@ -13,12 +16,12 @@ class Bio extends React.Component {
           marginBottom: rhythm(2.5),
         }}
       >
-      <div style={{fontFamily: 'Shadows Into Light',fontSize:'1.3em'}}>    
+      <div style={{fontFamily: 'Josefin Sans',fontSize:'1.3em'}}>    
        <span>
           Wellcome to Bull Of The Week
        </span>
        </div>
-       <h1 style={{fontFamily: 'Shadows Into Light',lineHeight:'1.5em',marginTop:'0.3em'}}>
+       <h1 className={styles.bioDesc} style={{fontFamily: 'Josefin Sans',lineHeight:'1.5em',marginTop:'0.3em'}}>
          <strong>
             <span>
               The First Crypto Trading
