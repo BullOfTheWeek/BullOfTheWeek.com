@@ -8,7 +8,7 @@ Wordpress2016.overrideThemeStyles = () => ({
   },
   'body': {
     fontFamily: 'Inconsolata',
-    fontSize:'16px',
+    fontSize:'18px',
   }
 
 })
