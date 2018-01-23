@@ -1,14 +1,16 @@
 import Typography from 'typography'
 import Wordpress2016 from 'typography-theme-wordpress-2016'
 import 'typeface-modern-antiqua'
+import 'typeface-inconsolata'
 Wordpress2016.overrideThemeStyles = () => ({
   'a': {
     boxShadow: 'none',
   },
   'body': {
-    fontFamily: 'Modern Antiqua'
+    fontFamily: 'Inconsolata',
+    fontSize:'16px',
   }
-  
+
 })
 
 const typography = new Typography(Wordpress2016)

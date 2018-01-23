@@ -1,3 +1,5 @@
+
+
 .menu {
     margin-bottom: 4em;
     
@@ -11,8 +13,9 @@
 .menu ul li a {
     color:black;
     border-bottom: 0.2em solid tomato; 
-    font-size: 1.4em;
+    font-size: 1.1em;
     padding-bottom: 0.5em;
+    font-family: Modern Antiqua;
 }
 .menu ul li:not(:last-child) {
     margin-right: 3.5em;
@@ -24,9 +27,7 @@
 
 @media screen and (max-width: 600px) {
 
- .menu ul {
-   text-align: left !important;
- } 
+ 
 }
 @media only screen and (max-width: 480px) {
 ul, ol {
