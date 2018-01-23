@@ -12,6 +12,8 @@ import styles from './index.module.css'
 import Headroom from 'react-headroom'
 import { slide as Menu } from 'react-burger-menu'
 import 'typeface-oswald'
+import 'typeface-modern-antiqua'
+
 if (typeof window !== `undefined`) {
   require('smooth-scroll')('a[href*="#"]');
 }
