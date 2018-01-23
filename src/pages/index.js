@@ -8,29 +8,61 @@ import About from '../components/About'
 import Contact from '../components/Contact'
 import Blog from '../components/Blog'
 import { rhythm } from '../utils/typography'
-//import SmoothScroll from 'smooth-scroll/dist/js/smooth-scroll.js'
 import styles from './index.module.css'
-
+import Headroom from 'react-headroom'
+import { slide as Menu } from 'react-burger-menu'
+import 'typeface-oswald'
 if (typeof window !== `undefined`) {
   require('smooth-scroll')('a[href*="#"]');
-  
 }
-
 class BlogIndex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { resNav: false,
+                   headroomClass:"",
+                 };
+    this.handleResNav = this.handleResNav.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+  componentDidMount() {
+   
+      window.addEventListener('scroll', this.handleScroll);
+   
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+  handleScroll() {
+   console.log(window.pageYOffset);
+  }
+
+  handleResNav() {
+    this.setState(prevState => ({
+      resNav: !prevState.resNav
+    }));
+    console.log(this.state.resNav);
+  }
+
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
-    return (
+    return (      
       <div>
         <Helmet title={siteTitle} />
-        <div className={styles.menu}>
-            <ul style={{ listStyle: `none`, textAlign: `center` }}>
-              <a  href="#about">About</a>
-              <a  href="#contact">Contact</a>
-              <a  href="#blog">Blog</a>
-            </ul>
-        </div>
+            <div className={styles.menu}>
+              <ul >
+               <li>
+                <a  href="#about">About</a>
+              </li>
+              <li>
+                <a  href="#contact">Contact</a>
+              </li>
+              <li>
+                <a  href="#blog">Blog</a>
+              </li>
+              </ul>
+            </div>
         <Bio />
         <SignUp />
         <div id="about">
@@ -40,7 +72,7 @@ class BlogIndex extends React.Component {
           <Contact />
         </div>
         <div id="blog">
-            <h1 style={{fontFamily:"Shadows Into Light"}}> Blog </h1>
+            <h1 style={{fontFamily:"Oswald"}}> Blog </h1>
             <div style={{marginLeft:'1.5em'}}>
                 {posts.map(({ node }) => {
                   const title = get(node, 'frontmatter.title') || node.fields.slug
@@ -62,6 +94,11 @@ class BlogIndex extends React.Component {
                 })}
             </div>
         </div>
+        <footer>
+          <div style={{textAlign:"center",marginTop:"6em",fontSize:"13px"}}>
+             <span> the project made in 2018,for those who seek freedom </span>
+          </div> 
+        </footer>
       </div>
     )
   }
