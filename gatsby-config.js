@@ -1,12 +1,12 @@
 require('dotenv/config');
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
+    title: 'BullOfTheWeek',
     author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
+    description: 'BullOfTheWeek.com Crypto Trading Website',
     siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
   },
-  pathPrefix: '/'+process.env.remoteDevRoot,
+  pathPrefix: '/' + process.env.remoteDevRoot,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
