@@ -41,6 +41,7 @@
     "typeface-oswald": "0.0.45",
     "typeface-quicksand": "0.0.44",
     "typeface-shadows-into-light": "0.0.44",
+    "typeface-vt323": "0.0.44",
     "typography-theme-wordpress-2016": "^0.15.10"
   },
   "devDependencies": {
