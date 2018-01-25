@@ -33,7 +33,7 @@ class BlogIndex extends React.Component {
     window.removeEventListener('scroll', this.handleScroll);
   }
   handleScroll() {
-   console.log(window.pageYOffset);
+   //console.log(window.pageYOffset);
   }
 
   handleResNav() {
