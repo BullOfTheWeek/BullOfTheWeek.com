@@ -4,11 +4,16 @@ import 'typeface-vt323'
 class SignUp extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
-        this.handleChange = this.handleChange.bind(this);
+        this.state = {email: '',twitter: ''};
+        this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.handleTwitterChange = this.handleTwitterChange.bind(this);
+        //Twitter Handle (optional)
       }
-      handleChange(event) {
-        this.setState({value: event.target.value});
+      handleEmailChange(event) {
+        this.setState({email: event.target.value});
+      }
+      handleTwitterChange(event) {
+        this.setState({twitter: event.target.value});
       }
     render() {
         return (
@@ -20,7 +25,10 @@ class SignUp extends React.Component {
                       <span>Fill out your e-mail address <br /> to receive our newsletter!</span>
                     </div>
                     <div style={{marginTop:'2rem'}}>
-                      <input type="email" id="emailAddress" value={this.state.value} onChange={this.handleChange} name="email" placeholder="youremail@gmail.com" />
+                      <input type="email" id="emailAddress" value={this.state.email} onChange={this.handleEmailChange} name="email" placeholder="youremail@gmail.com" />
+                    </div>
+                    <div style={{marginTop:'2rem'}}>
+                      <input type="text" id="twitter" value={this.state.twitter} onChange={this.handleTwitterChange} placeholder="twitter handle (optional)"  name="twitter"  />
                     </div>
                     <div style={{marginTop:'2rem'}}>
                       <input className={styles.button} type="submit" id="subscribeToList" value="Subscribe" />

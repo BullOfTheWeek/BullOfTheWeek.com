@@ -16,27 +16,45 @@
     background-color: rgb(187, 35, 8);
 }
 
-input[type="email"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+input[type="email"]::-webkit-input-placeholder,input[type="text"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: white;
     text-align: center;
     font-size: 1.7rem;
     opacity: 1;
   }
-
-input[type="email"] {
+  input[type="email"]::-moz-placeholder,input[type="text"]::-moz-placeholder {
+    color: white;
+    text-align: center;
+    font-size: 1.7rem;
+    opacity: 1;
+  }
+input[type="email"],input[type="text"] {
     background-color : #b52005;
     width:50%;
     padding: 7px;
     border-radius: 6px;
-    color: white;   
+    color: white; 
+    opacity: 1;  
+}
+input[type="text"] {
+    background-color: #4AB3F4;
 }
 @media screen and (max-width: 780px) {
-  input[type="email"] {
+  input[type="email"],input[type="text"] {
       width:90%;
   }
 }    
 @media screen and (max-width: 450px) {
     input[type="email"]::-webkit-input-placeholder {
         font-size:1.3rem
+    }
+    input[type="email"]::-moz-placeholder {
+        font-size:1.3rem
+    }
+    input[type="text"]::-webkit-input-placeholder {
+        font-size:1.1rem
+    }
+    input[type="text"]::-moz-input-placeholder {
+        font-size:1.1rem
     }
 }
