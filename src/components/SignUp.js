@@ -28,7 +28,7 @@ class SignUp extends React.Component {
                       <input type="email" id="emailAddress" value={this.state.email} onChange={this.handleEmailChange} name="email" placeholder="youremail@gmail.com" />
                     </div>
                     <div style={{marginTop:'2rem'}}>
-                      <input type="text" id="twitter" value={this.state.twitter} onChange={this.handleTwitterChange} placeholder="twitter handle (optional)"  name="twitter"  />
+                      <input type="text" id="title" value={this.state.twitter} onChange={this.handleTwitterChange} placeholder="twitter handle (optional)"  name="title"  />
                     </div>
                     <div style={{marginTop:'2rem'}}>
                       <input className={styles.button} type="submit" id="subscribeToList" value="Subscribe" />
