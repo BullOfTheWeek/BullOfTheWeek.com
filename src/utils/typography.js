@@ -2,12 +2,16 @@ import Typography from 'typography'
 import Wordpress2016 from 'typography-theme-wordpress-2016'
 import 'typeface-inconsolata'
 Wordpress2016.overrideThemeStyles = () => ({
+  'html': {
+   height: '100%'
+  },
   'a': {
     boxShadow: 'none',
   },
   'body': {
     fontFamily: 'Inconsolata',
     fontSize:'18px',
+    height: '100%',
   }
 
 })
