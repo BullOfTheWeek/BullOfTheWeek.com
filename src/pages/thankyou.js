@@ -22,7 +22,7 @@ class Thanks extends React.Component {
       <div style={{marginTop:'5rem'}}>
         <Helmet title={siteTitle} />
         <div style={{color:'tomato',fontWeight: 'bolder'}}>
-           <a href="/"><h1 style={{fontFamily: 'vt323'}}>Bull Of The Week</h1> </a> 
+           <a href="/develop"><h1 style={{fontFamily: 'vt323'}}>Bull Of The Week</h1> </a> 
            <p>Thanks for subscribing to our mailing list. We will soon update you with tips you wouldn't find for free in crypto community. Don't forget to shill us to your Twitter followers ;-)</p>
         </div>
         <footer>
