@@ -11,7 +11,6 @@ class SignUp extends React.Component {
         
       return (
         <div style={{textAlign:'center'}}>
-          <h1 style={{fontFamily:'vt323'}}></h1>
           <form id="signupSubscriberForm" method="post" action={MAILING_LIST_URL} acceptCharset="utf-8">
               <input type="hidden" name="formId" value="71280" />
               <div style={{marginTop:'2rem'}}>
@@ -22,11 +21,13 @@ class SignUp extends React.Component {
               <div style={{marginTop:'2rem'}}>
                 <input type="email" id="emailAddress" name="email" placeholder="youremail@gmail.com" />
               </div>
+              {/* will be activated later on campaigns
               <div style={{marginTop:'2rem'}}>
                 <input type="text" id="title" placeholder="twitter handle (optional)"  name="title"  />
               </div>
+              */}
               <div style={{marginTop:'2rem'}}>
-                <input className={styles.button} type="submit" id="subscribeToList" value="Subscribe" />
+                <input className={styles.button} type="submit" id="subscribeToList" value="Join the Legends" />
               </div>
           </form>
         </div>
