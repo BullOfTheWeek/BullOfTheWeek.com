@@ -70,11 +70,19 @@ class BlogIndex extends React.Component {
         </div>
         <div id="contact">
           <Contact />
+          Feel free to drop me a line at
+          {' '}
+          <span className={styles.obfuscate}>
+            moc.liamnotorp@keewehtfollub
+          </span>
+          {' '}
+          (do not copy, only type with hand)
         </div>
         <div id="blog">
             <h1> Blog </h1>
+            <p>Will be updated soon!</p>
             <div style={{marginLeft:'1.5em'}}>
-                {posts.map(({ node }) => {
+                {posts && posts.map(({ node }) => {
                   const title = get(node, 'frontmatter.title') || node.fields.slug
                   return (
                     <div key={node.fields.slug}>

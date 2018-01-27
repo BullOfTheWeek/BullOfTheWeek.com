@@ -34,6 +34,13 @@ h1,h2 {
   margin-top: 0.3em;
 }
 
+/* for email addresses */
+.obfuscate {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  font-weight: 700;
+}
+
 @media only screen and (max-width: 480px) {
   ul, ol {
       margin-left: 0 !important;
