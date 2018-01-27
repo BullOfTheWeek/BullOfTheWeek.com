@@ -15,7 +15,7 @@ class SignUp extends React.Component {
               <input type="hidden" name="formId" value="71280" />
               <div style={{marginTop:'2rem'}}>
                 <span>
-                  Enter your email and twitter handle to receive my latest ICO recommendation for this week and subscribe to my weekly mailing list updates.
+                  Enter your email to receive <b>my latest ICO recommendation</b> for this week and subscribe to my weekly crypto trading mailing list.
                 </span>
               </div>
               <div style={{marginTop:'2rem'}}>
