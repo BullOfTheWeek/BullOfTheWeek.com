@@ -1,8 +1,15 @@
+body {
+  background: rgb(231, 231, 231);
+}
 
-
+h1,h2 {
+  font-family: 'Indie Flower';
+  color: rgb(32, 29, 29);
+  font-size: 2rem;
+  font-weight: 300;
+}
 .menu {
-    margin-bottom: 4em;
-    
+  margin-bottom: 4em; 
 }
 .menu ul {
   text-align: center
@@ -15,31 +22,29 @@
     border-bottom: 0.2em solid tomato; 
     font-size: 1.2em;
     padding-bottom: 0.5em;
-    font-family: vt323;
+    font-family: 'Indie Flower';
 }
 .menu ul li:not(:last-child) {
     margin-right: 3.5em;
 }
 
-
-
-
-
-@media screen and (max-width: 600px) {
-
- 
+.bioDesc  {
+  font-family: 'Indie Flower';
+  line-height: 2em;
+  margin-top: 0.3em;
 }
+
 @media only screen and (max-width: 480px) {
-ul, ol {
-    margin-left: 0 !important;
-}
-.menu ul li:not(:last-child) {
-  margin-right: 2.2rem;
-}
+  ul, ol {
+      margin-left: 0 !important;
+  }
+  .menu ul li:not(:last-child) {
+    margin-right: 2.2rem;
+  }
 }
 
 @media only screen and (max-width: 380px) {
-   .bioDesc  {
-     font-size: 1.4rem
-   }
+  .bioDesc  {
+    font-size: 1.4rem
   }
+}

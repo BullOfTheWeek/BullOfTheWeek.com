@@ -11,7 +11,7 @@ import { rhythm } from '../utils/typography'
 import styles from './index.module.css'
 import Headroom from 'react-headroom'
 import { slide as Menu } from 'react-burger-menu'
-import 'typeface-vt323'
+
 if (typeof window !== `undefined`) {
   require('smooth-scroll')('a[href*="#"]');
 }
@@ -72,7 +72,7 @@ class BlogIndex extends React.Component {
           <Contact />
         </div>
         <div id="blog">
-            <h1 style={{fontFamily:"vt323"}}> Blog </h1>
+            <h1> Blog </h1>
             <div style={{marginLeft:'1.5em'}}>
                 {posts.map(({ node }) => {
                   const title = get(node, 'frontmatter.title') || node.fields.slug
@@ -96,7 +96,7 @@ class BlogIndex extends React.Component {
         </div>
         <footer>
           <div style={{textAlign:"center",marginTop:"6em",fontSize:"13px"}}>
-             <span> the project made in 2018,for those who seek freedom </span>
+             <span>Made with love in 2018</span>
           </div> 
         </footer>
       </div>

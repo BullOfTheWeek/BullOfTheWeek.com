@@ -5,7 +5,7 @@ import 'typeface-montserrat'
 import 'typeface-merriweather'
 import 'typeface-shadows-into-light'
 import 'typeface-josefin-sans'
-import 'typeface-vt323'
+import 'typeface-indie-flower'
 import styles from '../pages/index.module.css'
 
 import { rhythm } from '../utils/typography'
@@ -16,26 +16,37 @@ class Bio extends React.Component {
         style={{
           marginBottom: rhythm(2.5),
         }}
+      >   
+       <h1 style={{
+         fontSize: '3rem',
+         color: 'rgb(121, 121, 121)'
+        }}
       >
-      <div style={{fontFamily: 'VT323',  fontSize:'1.3em'}}>    
-       <span>
-          Wellcome to Bull Of The Week
-       </span>
-       </div>
-       <h1 className={styles.bioDesc} style={{fontFamily: 'VT323',lineHeight:'1.5em',marginTop:'0.3em'}}>
-         <strong>
-            <span>
-              The First Crypto Trading
-              <br/>
-              Mailing list
-            </span> 
-         </strong>
+          Bull Of The Week
        </h1>
-        <p>
-          join today to find great ICO reviews,undervalued 
-          crypto tokens and solid ways to make profit every
-          week in your email for FREE! 
-        </p>
+       <h1 className={styles.bioDesc}>
+          <span style={{
+            fontSize: '2.5rem',
+            color: 'rgb(141, 141, 141)'
+          }}>
+            The First
+          </span>
+          <br/>
+          <span style={{
+            fontSize: '7.5rem',
+            lineHeight: '5rem'
+          }}>
+            Crypto Trading
+          </span>
+          
+          <span style={{
+            fontSize: '2rem',
+            marginLeft: '1rem'
+          }}>
+            Mailing list
+          </span> 
+       </h1>
+
       </div>
     )
   }
