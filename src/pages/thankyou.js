@@ -23,7 +23,7 @@ class Thanks extends React.Component {
         <Helmet title="Thank you" />
         <div>
            <a href="/"><h1>Bull Of The Week</h1> </a> 
-           <p>Thanks for subscribing to our FREE mailing list. Please check your email for a free gift. We will soon update you with tips you wouldn't find for free in crypto community. Don't forget to shill us to your Twitter followers ;-)</p>
+           <p>Thanks for subscribing to our FREE mailing list. Please check your email for a free gift. Make sure to check the Spam folder since we are a new mailing list and some mails may go into Spam. We will soon update you with tips you wouldn't find for free in crypto community. Don't forget to shill us to your Twitter followers ;-)</p>
         </div>
         <footer>
           <div style={{textAlign:"center",marginTop:"6em",fontSize:"13px"}}>
