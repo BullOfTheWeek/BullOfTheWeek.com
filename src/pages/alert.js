@@ -16,7 +16,9 @@ class Alert extends React.Component {
     onFailed = (error) => {
         alert(error);
     };
-
+    logout = () => {
+        this.setState({isAuthenticated: false, token: '',user: null})
+    };
     render() {
         let content = !!this.state.isAuthenticated ?
           (
