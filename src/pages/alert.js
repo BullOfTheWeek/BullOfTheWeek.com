@@ -12,7 +12,11 @@ class Alert extends React.Component {
             this.setState({isAuthenticated: true, user: user, token: token});
           }
         });
-      };
+    };
+    onFailed = (error) => {
+        alert(error);
+    };
+
     render() {
         return(
             <p> sign in twiiter </p>
