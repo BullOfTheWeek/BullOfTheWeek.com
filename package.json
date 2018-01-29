@@ -29,6 +29,7 @@
     "react-burger-menu": "^2.2.3",
     "react-headroom": "^2.2.2",
     "react-responsive-grid": "^0.3.4",
+    "react-twitter-auth": "0.0.10",
     "smooth-scroll": "^12.1.5",
     "typeface-abel": "0.0.44",
     "typeface-arvo": "0.0.44",
