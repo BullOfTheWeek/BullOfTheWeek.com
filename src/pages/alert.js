@@ -5,6 +5,14 @@ class Alert extends React.Component {
         super();
         this.state = { isAuthenticated: false, user: null, token: ''};
     }
+    onSuccess = (response) => {
+        const token = response.headers.get('x-auth-token');
+        response.json().then(user => {
+          if (token) {
+            this.setState({isAuthenticated: true, user: user, token: token});
+          }
+        });
+      };
     render() {
         return(
             <p> sign in twiiter </p>
