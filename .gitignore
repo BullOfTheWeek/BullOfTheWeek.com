@@ -8,3 +8,7 @@ yarn.lock
 .env
 .env.development
 .env.production
+backend/composer.phar
+backend/composer.lock
+backend/vendor/
+backend/config.php
