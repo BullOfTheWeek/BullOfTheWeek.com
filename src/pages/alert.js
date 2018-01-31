@@ -1,9 +1,29 @@
 import React from 'react';
 import TwitterLogin from 'react-twitter-auth';
+import Axios from 'axios'; 
 class Alert extends React.Component {
     constructor() {
         super();
         this.state = { isAuthenticated: false, user: null, token: ''};
+        this.authTwitter = this.authTwitter.bind(this);
+    }
+ 
+    authTwitter = () => {
+        let authLink;
+        Axios.post(process.env.TWITTER_AUTH_REQUEST, {
+            name:"twitter"
+          })
+          .then(function(response) {
+              
+            authLink = response.data.replace(/string|79|"| |[()]/g,'');
+              
+            
+          }).then(() => {
+            document.location.replace(authLink);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
     onSuccess = (response) => {
         const token = response.headers.get('x-auth-token');
@@ -35,9 +55,9 @@ class Alert extends React.Component {
               </div>
           ) :
           (
-            <TwitterLogin loginUrl="http://localhost:4000/api/v1/auth/twitter"
-            onFailure={this.onFailed} onSuccess={this.onSuccess}
-            requestTokenUrl="http://localhost:4000/api/v1/auth/twitter/reverse"/>
+            <button onClick={this.authTwitter}>
+              sign in with twitter
+            </button>
           );
         return(
            <div>
