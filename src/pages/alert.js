@@ -10,7 +10,7 @@ class Alert extends React.Component {
  
     authTwitter = () => {
         let authLink;
-        Axios.post(process.env.TWITTER_AUTH_REQUEST, {
+        Axios.post('http://localhost:8080/index.php', {
             name:"twitter"
           })
           .then(function(response) {
