@@ -10,20 +10,7 @@ class Alert extends React.Component {
  
     authTwitter = () => {
         let authLink;
-        Axios.post('http://localhost:8080/index.php', {
-            name:"twitter"
-          })
-          .then(function(response) {
-              
-            authLink = response.data.replace(/string|79|"| |[()]/g,'');
-              
-            
-          }).then(() => {
-            document.location.replace(authLink);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+        document.location.replace('http://localhost/BullOfTheWeek/backend/twitter_login.php');
     }
     onSuccess = (response) => {
         const token = response.headers.get('x-auth-token');
