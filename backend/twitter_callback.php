@@ -32,7 +32,8 @@
 
     if(mysqli_num_rows($query) > 0){
 
-        echo "email already exists";
+       // echo "email already exists";
+      header('Location: http://www.bulloftheweek.com/');
 
     }
     else{
@@ -40,7 +41,8 @@
       $sql = "INSERT INTO alertUsers (username,subscribed_date)
       VALUES ('".$access_token['screen_name']."', CURRENT_TIMESTAMP)";
       if ($conn->query($sql) === TRUE) {
-          echo "New record created successfully";
+        //  echo "New record created successfully";
+        header('Location: http://www.bulloftheweek.com/welcome');
       } else {
           echo "Error: " . $sql . "<br>" . $conn->error;
       }
