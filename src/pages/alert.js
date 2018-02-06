@@ -10,7 +10,7 @@ class Alert extends React.Component {
  
     authTwitter = () => {
         let authLink;
-        document.location.replace('http://BullOfTheWeek.com/backend/twitter_login.php');
+        document.location.replace('http://BullOfTheWeek.com/server/twitter_login.php');
     }
     onSuccess = (response) => {
         const token = response.headers.get('x-auth-token');
