@@ -13,7 +13,7 @@ import Headroom from 'react-headroom'
 import { slide as Menu } from 'react-burger-menu'
 import 'typeface-vt323'
 
-class wellcome extends React.Component {
+class welcome extends React.Component {
 
 
   render() {
@@ -35,5 +35,5 @@ class wellcome extends React.Component {
   }
 }
 
-export default wellcome
+export default welcome
 
