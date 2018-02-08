@@ -1,5 +1,4 @@
 import React from 'react';
-import TwitterLogin from 'react-twitter-auth';
 import Axios from 'axios'; 
 class Alert extends React.Component {
     constructor() {
