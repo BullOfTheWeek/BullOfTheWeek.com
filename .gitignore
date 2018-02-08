@@ -6,3 +6,9 @@ public
 .cache/
 yarn.lock
 .env
+.env.development
+.env.production
+server/composer.phar
+server/composer.lock
+server/vendor/
+server/config.php
