@@ -12,18 +12,12 @@ const getCookie = (name) => {
         return false
     }
   }
-class DashboardAlert extends React.Component {
+  class DashboardAlert extends React.Component {
     constructor(props) {
       super(props);
       this.state = {deltaDay: 0}
     }
-    componentDidMount() {
-        const subscribed_date = "subscribed_date";  
-       // var diff = Math.abs(new Date() - date);
-        var diff = Math.abs(new Date() - new Date(getCookie(subscribed_date).replace(/-/g,'/')));
-        diff = Math.round(diff/86400000);
-        this.setState({deltaDay: diff})
-    }
+
     
     render() {
         const daysRemaining = 15;
