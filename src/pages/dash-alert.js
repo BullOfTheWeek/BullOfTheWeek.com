@@ -1,10 +1,30 @@
 import React from 'react'
 import bitcoinPic from './bitcoin.png';
 import styles from './dash-alert.module.css';
-import { Container } from 'react-responsive-grid'
-import { rhythm, scale } from '../utils/typography'
+import { Container } from 'react-responsive-grid';
+import { rhythm, scale } from '../utils/typography';
 
+const getCookie = (name) => {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
+    else {
+        return false
+    }
+  }
 class DashboardAlert extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {deltaDay: 0}
+    }
+    componentDidMount() {
+        const subscribed_date = "subscribed_date";  
+       // var diff = Math.abs(new Date() - date);
+        var diff = Math.abs(new Date() - new Date(getCookie(subscribed_date).replace(/-/g,'/')));
+        diff = Math.round(diff/86400000);
+        this.setState({deltaDay: diff})
+    }
+    
     render() {
         const daysRemaining = 15;
         const acountVip = false;
@@ -28,7 +48,7 @@ class DashboardAlert extends React.Component {
                 <header className={styles.dashHeader}>
                     <div>
                         <div className={styles.alignleft}>
-                            Bull Of The Week <span style={{fontSize:'0.8em'}}> Crypto Currency Alert Service ({daysRemaining} days remaining)</span>
+                            Bull Of The Week <span style={{fontSize:'0.8em'}}> Crypto Currency Alert Service ({daysRemaining - this.state.deltaDay} days remaining)</span>
                         </div>
                         <div className={styles.alignright}>
                             <a style={{marginRight:'1.3em'}}>Upgrade Membership</a>
