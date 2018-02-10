@@ -5,6 +5,7 @@ import { Container } from 'react-responsive-grid';
 import { rhythm, scale } from '../utils/typography';
 
 const getCookie = (name) => {
+    
     var value = "; " + document.cookie;
     var parts = value.split("; " + name + "=");
     if (parts.length == 2) return parts.pop().split(";").shift();
@@ -19,10 +20,12 @@ const getCookie = (name) => {
     }
 
     componentDidMount() {
-        const subscribed_date = "subscribed_date";  
-        var diff = Math.abs(new Date() - new Date(getCookie(subscribed_date).replace(/-/g,'/')));
+        const subscribed_date = "subscribed_date";
+        const membership_finishes = "membership_finishes";  
+        var diff = Math.abs(new Date(getCookie(membership_finishes).replace(/-/g,'/')) - new Date(getCookie(subscribed_date).replace(/-/g,'/')));
+        
         diff = Math.round(diff/86400000);
-        this.setState({deltaDay: diff})
+        this.setState({deltaDay: diff});
     }
 
     
@@ -49,7 +52,7 @@ const getCookie = (name) => {
                 <header className={styles.dashHeader}>
                     <div>
                         <div className={styles.alignleft}>
-                            Bull Of The Week <span style={{fontSize:'0.8em'}}> Crypto Currency Alert Service ({daysRemaining - this.state.deltaDay} days remaining)</span>
+                            Bull Of The Week <span style={{fontSize:'0.8em'}}> Crypto Currency Alert Service ({this.state.deltaDay} days remaining)</span>
                         </div>
                         <div className={styles.alignright}>
                             <a style={{marginRight:'1.3em'}}>Upgrade Membership</a>
