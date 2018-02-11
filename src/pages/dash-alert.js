@@ -17,18 +17,15 @@ const getCookie = (name) => {
       super(props);
       this.state = {deltaDay: 0}
     }
-    componentWillMount(){
-        console.log(document.cookie);
-        if (!(getCookie('subscribed_date'))){
-            document.location.replace('http://BullOfTheWeek.com/develop/alert');
-        }
-    }
+
 
     componentDidMount() {
+        console.log(document.cookie);
         const subscribed_date = "subscribed_date";
         const membership_finishes = "membership_finishes";  
         if (!(getCookie(subscribed_date))){
-            document.location.replace('http://BullOfTheWeek.com/develop/alert');
+            document.location.replace('http://www.bulloftheweek.com/develop/alert');
+           //   document.location.replace('http://localhost:8000/alert');
         }
         else {
             var diff = Math.abs(new Date(getCookie(membership_finishes).replace(/-/g,'/')) - new Date(getCookie(subscribed_date).replace(/-/g,'/')));
