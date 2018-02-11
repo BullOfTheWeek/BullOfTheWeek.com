@@ -20,7 +20,7 @@ const getCookie = (name) => {
     componentWillMount(){
         console.log(document.cookie);
         if (!(getCookie('subscribed_date'))){
-            document.location.replace('http://localhost:8000/alert');
+            document.location.replace('http://BullOfTheWeek.com/develop/alert');
         }
     }
 
@@ -28,7 +28,7 @@ const getCookie = (name) => {
         const subscribed_date = "subscribed_date";
         const membership_finishes = "membership_finishes";  
         if (!(getCookie(subscribed_date))){
-            document.location.replace('http://localhost:8000/alert');
+            document.location.replace('http://BullOfTheWeek.com/develop/alert');
         }
         else {
             var diff = Math.abs(new Date(getCookie(membership_finishes).replace(/-/g,'/')) - new Date(getCookie(subscribed_date).replace(/-/g,'/')));
