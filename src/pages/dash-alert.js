@@ -5,7 +5,6 @@ import { Container } from 'react-responsive-grid';
 import { rhythm, scale } from '../utils/typography';
 
 const getCookie = (name) => {
-    
     var value = "; " + document.cookie;
     var parts = value.split("; " + name + "=");
     if (parts.length == 2) return parts.pop().split(";").shift();
@@ -18,14 +17,24 @@ const getCookie = (name) => {
       super(props);
       this.state = {deltaDay: 0}
     }
+    componentWillMount(){
+        console.log(document.cookie);
+        if (!(getCookie('subscribed_date'))){
+            document.location.replace('http://localhost:8000/alert');
+        }
+    }
 
     componentDidMount() {
         const subscribed_date = "subscribed_date";
         const membership_finishes = "membership_finishes";  
-        var diff = Math.abs(new Date(getCookie(membership_finishes).replace(/-/g,'/')) - new Date(getCookie(subscribed_date).replace(/-/g,'/')));
-        
-        diff = Math.round(diff/86400000);
-        this.setState({deltaDay: diff});
+        if (!(getCookie(subscribed_date))){
+            document.location.replace('http://localhost:8000/alert');
+        }
+        else {
+            var diff = Math.abs(new Date(getCookie(membership_finishes).replace(/-/g,'/')) - new Date(getCookie(subscribed_date).replace(/-/g,'/')));
+            diff = Math.round(diff/86400000);
+            this.setState({deltaDay: diff});
+        }
     }
 
     
