@@ -6,6 +6,10 @@ class Alert extends React.Component {
         this.state = { isAuthenticated: false, user: null, token: ''};
         this.authTwitter = this.authTwitter.bind(this);
     }
+    componentDidMount(){
+        console.log(document.cookie);
+
+    }
  
     authTwitter = () => {
         let authLink;
@@ -27,7 +31,6 @@ class Alert extends React.Component {
         this.setState({isAuthenticated: false, token: '',user: null})
     };
     render() {
-        console.log(document.cookie);
         let content = !!this.state.isAuthenticated ?
           (
               <div>
