@@ -31,10 +31,6 @@
         }
 
     if(mysqli_num_rows($query) > 0){
-
-      //  echo "email already exists";
-    //  $conn->close();
-    //  header('Location: http://www.bulloftheweek.com/');
     $row = mysqli_fetch_array($query);
     $subscribed_date = $row['subscribed_date'];
     $membership_finishes = $row['membership_finishes'];
@@ -78,7 +74,5 @@
 
     $conn->close();
 
-  //  print_r($access_token['screen_name']);
-   // $url = $connection->url('oauth/authorize', array('oauth_token' => $_GET['oauth_token']));
-   // header($url);
+
   ?>
