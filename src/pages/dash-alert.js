@@ -15,23 +15,30 @@ const getCookie = (name) => {
   class DashboardAlert extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {deltaDay: 0}
+      this.state = {deltaDay: 0, acountExpire: false};
     }
 
 
     componentDidMount() {
         console.log(document.cookie);
         const subscribed_date = "subscribed_date";
-        const membership_finishes = "membership_finishes";  
+        const membership_finishes = "membership_finishes"; 
+         
         if (!(getCookie(subscribed_date))){
-            document.location.replace('http://www.bulloftheweek.com/develop/alert');
-           //   document.location.replace('http://localhost:8000/alert');
+          //  document.location.replace('http://www.bulloftheweek.com/develop/alert');
+              document.location.replace('http://localhost:8000/alert');
         }
+
         else {
-            var diff = Math.abs(new Date(getCookie(membership_finishes).replace(/-/g,'/')) - new Date(getCookie(subscribed_date).replace(/-/g,'/')));
+            var diff = Math.abs(new Date(getCookie(membership_finishes).replace(/-/g,'/')) - new Date());
             diff = Math.round(diff/86400000);
-            this.setState({deltaDay: diff});
+            if (diff < 0) {
+                this.setState ({acountExpire: true});
+            }
+            else
+                this.setState({deltaDay: diff});
         }
+        
     }
 
     
