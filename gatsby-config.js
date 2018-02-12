@@ -47,7 +47,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-feed`,
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-typography',
@@ -55,6 +54,5 @@ module.exports = {
         pathToConfigModule: 'src/utils/typography',
       },
     },
-    'gatsby-plugin-remove-serviceworker',
   ],
 }
