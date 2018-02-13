@@ -3,6 +3,7 @@ import bitcoinPic from './bitcoin.png';
 import styles from './dash-alert.module.css';
 import { Container } from 'react-responsive-grid';
 import { rhythm, scale } from '../utils/typography';
+import cookie from 'react-cookies'
 
 const getCookie = (name) => {
     var value = "; " + document.cookie;
@@ -21,9 +22,10 @@ const getCookie = (name) => {
 
     componentDidMount() {
         console.log(document.cookie);
+        console.log(cookie.load('membership_finishes'));
         const subscribed_date = "subscribed_date";
         const membership_finishes = "membership_finishes"; 
-         
+       /*  
         if (!(getCookie(subscribed_date))){
           //  document.location.replace('http://www.bulloftheweek.com/develop/alert');
               document.location.replace('http://localhost:8000/alert');
@@ -38,7 +40,7 @@ const getCookie = (name) => {
             else
                 this.setState({deltaDay: diff});
         }
-        
+        */
     }
 
     
