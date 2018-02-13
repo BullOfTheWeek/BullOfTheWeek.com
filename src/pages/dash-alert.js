@@ -25,10 +25,10 @@ const getCookie = (name) => {
         console.log(cookie.load('membership_finishes'));
         const subscribed_date = "subscribed_date";
         const membership_finishes = "membership_finishes"; 
-       /*  
+         
         if (!(getCookie(subscribed_date))){
-          //  document.location.replace('http://www.bulloftheweek.com/develop/alert');
-              document.location.replace('http://localhost:8000/alert');
+            document.location.replace('http://www.bulloftheweek.com/develop/alert');
+           //   document.location.replace('http://localhost:8000/alert');
         }
 
         else {
@@ -40,7 +40,7 @@ const getCookie = (name) => {
             else
                 this.setState({deltaDay: diff});
         }
-        */
+        
     }
 
     

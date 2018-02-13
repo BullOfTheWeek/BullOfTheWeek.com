@@ -35,9 +35,9 @@
     $subscribed_date = $row['subscribed_date'];
     $membership_finishes = $row['membership_finishes'];
     $membership = $row['membership'];
-    setcookie("subscribed_date", $subscribed_date, time() + (86400 * 30), "/"); // 86400 = 1 day
-    setcookie("membership_finishes", $membership_finishes, time() + (86400 * 30), "/"); // 86400 = 1 day
-    setcookie("membership", $membership, time() + (86400 * 30), "/"); // 86400 = 1 day
+    setcookie("subscribed_date", $subscribed_date, time() + (86400 * 30), "/",'bulloftheweek.com',0,0); // 86400 = 1 day
+    setcookie("membership_finishes", $membership_finishes, time() + (86400 * 30), "/",'bulloftheweek.com',0,0); // 86400 = 1 day
+    setcookie("membership", $membership, time() + (86400 * 30), "/",'bulloftheweek.com',0,0); // 86400 = 1 day
     $conn->close();
     header('Location: http://www.bulloftheweek.com/develop/dash-alert');
 
@@ -58,9 +58,9 @@
           $subscribed_date = $row['subscribed_date'];
           $membership_finishes = $row['membership_finishes'];
           $membership = $row['membership'];
-          setcookie("subscribed_date", $subscribed_date, time() + (86400 * 30), "/"); // 86400 = 1 day
-          setcookie("membership_finishes", $membership_finishes, time() + (86400 * 30), "/"); // 86400 = 1 day
-          setcookie("membership", $membership, time() + (86400 * 30), "/"); // 86400 = 1 day
+          setcookie("subscribed_date", $subscribed_date, time() + (86400 * 30), "/",'bulloftheweek.com',0,0); // 86400 = 1 day
+          setcookie("membership_finishes", $membership_finishes, time() + (86400 * 30), "/",'bulloftheweek.com',0,0); // 86400 = 1 day
+          setcookie("membership", $membership, time() + (86400 * 30), "/",'bulloftheweek.com',0,0); // 86400 = 1 day
           $conn->close();
           header('Location: http://www.bulloftheweek.com/develop/dash-alert');
         }
