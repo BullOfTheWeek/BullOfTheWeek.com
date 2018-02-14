@@ -22,7 +22,7 @@ const getCookie = (name) => {
 
     componentDidMount() {
         console.log(document.cookie);
-        console.log(cookie.load('membership_finishes'));
+   //     console.log(cookie.load('membership_finishes'));
         const subscribed_date = "subscribed_date";
         const membership_finishes = "membership_finishes"; 
          
@@ -38,8 +38,13 @@ const getCookie = (name) => {
                 this.setState ({acountExpire: true});
             }
             else
+              {
+               
                 this.setState({deltaDay: diff});
+              }
+               
         }
+        console.log("dif in didmount" + diff);
         
     }
 
@@ -48,6 +53,8 @@ const getCookie = (name) => {
         const daysRemaining = 15;
         const acountVip = false;
         const dashboardTable = [];
+        console.log("deltaday state in render" + this.state.deltaDay);
+
         for ( var i = 0; i <= 3; i++ ) {
 
             dashboardTable.push(
