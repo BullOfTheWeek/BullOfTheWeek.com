@@ -3,9 +3,9 @@ import bitcoinPic from './bitcoin.png';
 import styles from './dash-alert.module.css';
 import { Container } from 'react-responsive-grid';
 import { rhythm, scale } from '../utils/typography';
-import cookie from 'react-cookies'
-
-const getCookie = (name) => {
+import cookie from 'react-cookies';
+import Axios from 'axios';
+  const getCookie = (name) => {
     var value = "; " + document.cookie;
     var parts = value.split("; " + name + "=");
     if (parts.length == 2) return parts.pop().split(";").shift();
@@ -13,36 +13,65 @@ const getCookie = (name) => {
         return false
     }
   }
+  const delete_cookie = (name) => { 
+    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  };
   class DashboardAlert extends React.Component {
     constructor(props) {
       super(props);
       this.state = {deltaDay: 0, acountExpire: false};
     }
-
-
     componentDidMount() {
-        console.log(document.cookie);
-   //     console.log(cookie.load('membership_finishes'));
         const subscribed_date = "subscribed_date";
         const membership_finishes = "membership_finishes"; 
-         
-        if (!(getCookie(subscribed_date))){
+        const screen_name = "screen_name"; 
+        if (!(getCookie(screen_name))){
             document.location.replace('http://www.bulloftheweek.com/develop/alert');
            //   document.location.replace('http://localhost:8000/alert');
         }
 
-        else {
-            var diff = Math.abs(new Date(getCookie(membership_finishes).replace(/-/g,'/')) - new Date());
-            diff = Math.round(diff/86400000);
-            if (diff < 0) {
-                this.setState ({acountExpire: true});
-            }
-            else
-              {
-               
-                this.setState({deltaDay: diff});
-              }
-               
+       else {
+
+                var invocation = new XMLHttpRequest();
+                var url = 'http://www.bullOftheweek.com/server/check_use.php';  
+                var handler = (response) => {
+                    if (response.currentTarget.response=="back"){
+                        delete_cookie(subscribed_date);
+                        delete_cookie(screen_name);
+                        delete_cookie(membership_finishes);
+                        document.location.replace('http://www.bulloftheweek.com/develop/alert');
+
+                    }
+                    if (response.currentTarget.response=="successfully") {
+                        var diff = Math.abs(new Date(getCookie(membership_finishes).replace(/-/g,'/')) - new Date());
+                        diff = Math.round(diff/86400000) + 1;
+                        if (diff < 0) {
+                            this.setState ({acountExpire: true});
+                        }
+                        else
+                        {
+                        
+                            this.setState({deltaDay: diff});
+                        }
+                    }
+                    else {
+                        document.location.replace('http://www.bulloftheweek.com/develop/alert');
+
+                    }
+                } 
+                function callOtherDomain() {
+                    if(invocation) {
+    
+                    invocation.open('POST', url, true);
+                    invocation.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    invocation.onreadystatechange = handler;
+                    invocation.send("screen_name="+getCookie(screen_name)); 
+                    }
+                }
+                callOtherDomain();
+                if ((getCookie(screen_name))){
+                  
+                }
         }
         console.log("dif in didmount" + diff);
         
