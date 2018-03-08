@@ -1,5 +1,4 @@
 import React from 'react';
-import TwitterLogin from 'react-twitter-auth';
 import Axios from 'axios'; 
 class Alert extends React.Component {
     constructor() {
@@ -7,10 +6,14 @@ class Alert extends React.Component {
         this.state = { isAuthenticated: false, user: null, token: ''};
         this.authTwitter = this.authTwitter.bind(this);
     }
+    componentDidMount() {
+        console.log(document.cookie);
+    }
  
     authTwitter = () => {
         let authLink;
         document.location.replace('http://BullOfTheWeek.com/server/twitter_login.php');
+     //  document.location.replace('http://localhost/BullOfTheWeek/server/twitter_login.php');
     }
     onSuccess = (response) => {
         const token = response.headers.get('x-auth-token');

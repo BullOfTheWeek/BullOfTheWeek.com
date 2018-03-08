@@ -12,25 +12,33 @@ import styles from './index.module.css'
 import Headroom from 'react-headroom'
 import { slide as Menu } from 'react-burger-menu'
 import 'typeface-vt323'
+import { Container } from 'react-responsive-grid'
 
 class Thanks extends React.Component {
 
 
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title');
-    return (      
-      <div style={{marginTop:'5rem'}}>
-        <Helmet title="Thank you" />
-        <div>
-           <a href="/"><h1>Bull Of The Week</h1> </a> 
-           <p>Thanks for subscribing to our FREE mailing list. Please check your email for a free gift. Make sure to check the Spam folder since we are a new mailing list and some mails may go into Spam. We will soon update you with tips you wouldn't find for free in crypto community. Don't forget to shill us to your Twitter followers ;-)</p>
-        </div>
-        <footer>
-          <div style={{textAlign:"center",marginTop:"6em",fontSize:"13px"}}>
-             <span>made with love in 2018</span>
-          </div> 
-        </footer>
-      </div>
+    return (   
+      <Container
+          style={{
+            maxWidth: rhythm(34),
+            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          }}
+      >   
+          <div style={{marginTop:'5rem'}}>
+            <Helmet title="Thank you" />
+            <div>
+              <a href="/"><h1>Bull Of The Week</h1> </a> 
+              <p>Thanks for subscribing to our FREE mailing list. Please check your email for a free gift. Make sure to check the Spam folder since we are a new mailing list and some mails may go into Spam. We will soon update you with tips you wouldn't find for free in crypto community. Don't forget to shill us to your Twitter followers ;-)</p>
+            </div>
+            <footer>
+              <div style={{textAlign:"center",marginTop:"6em",fontSize:"13px"}}>
+                <span>made with love in 2018</span>
+              </div> 
+            </footer>
+          </div>
+      </Container>
     )
   }
 }

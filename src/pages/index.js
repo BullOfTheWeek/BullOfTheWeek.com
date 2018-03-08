@@ -11,6 +11,7 @@ import { rhythm } from '../utils/typography'
 import styles from './index.module.css'
 import Headroom from 'react-headroom'
 import { slide as Menu } from 'react-burger-menu'
+import { Container } from 'react-responsive-grid'
 
 if (typeof window !== `undefined`) {
   require('smooth-scroll')('a[href*="#"]');
@@ -48,7 +49,12 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (      
-      <div>
+      <Container
+      style={{
+        maxWidth: rhythm(34),
+        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+      }}
+      >
         <Helmet title={siteTitle} />
             <div className={styles.menu}>
               <ul >
@@ -107,7 +113,7 @@ class BlogIndex extends React.Component {
              <span>Made with love in 2018</span>
           </div> 
         </footer>
-      </div>
+      </Container>
     )
   }
 }

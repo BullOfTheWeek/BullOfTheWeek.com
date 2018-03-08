@@ -8,6 +8,7 @@ module.exports = {
   },
   pathPrefix: '/' + process.env.remoteDevRoot,
   plugins: [
+    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
